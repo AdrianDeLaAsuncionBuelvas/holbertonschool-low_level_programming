@@ -10,7 +10,7 @@ int main(void)
 int a = 0;
 while (a < 10)
 {
-printf("%i",a);
+printf("%i\n", a);
 a++;
 }
 return (0);
