@@ -18,7 +18,7 @@ for (d = b + 1; d <= 9; d++)
 putchar(a + '0');
 putchar(b + '0');
 putchar(d + '0');
-if (b < 9 || a < 8)
+if (b < 8 || a < 7)
 {
 putchar(',');
 putchar(' ');
