@@ -1,8 +1,6 @@
 #include "holberton.h"
 /**
-* main - check the code for Holberton School students.
-*
-* Return: Always 0.
+* print_alphabet_x10 - Print alphabet_x10 in lowercase using only `_putchar`
 */
 void print_alphabet_x10(void)
 {
