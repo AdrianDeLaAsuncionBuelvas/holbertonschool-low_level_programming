@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
  * print_triangle - prints a triangle, followed by a new line.
@@ -15,7 +15,7 @@ for (a = 0; a < size; a++)
 b = size - 1 - a;
 c = a + 1;
 for (; b > 0; b--)
-		{
+{
 _putchar(' ');
 }
 for (; c > 0; c--)
