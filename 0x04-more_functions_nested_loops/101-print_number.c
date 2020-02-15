@@ -6,7 +6,7 @@
  */
 void print_number(int n)
 {
-int a;
+unsigned int a;
 
 if (n < 0)
 {
