@@ -5,6 +5,7 @@
  * @n: int type Integer.
  * Return: void.
  */
+
 void reset_to_98(int *n)
 {
 int a;
