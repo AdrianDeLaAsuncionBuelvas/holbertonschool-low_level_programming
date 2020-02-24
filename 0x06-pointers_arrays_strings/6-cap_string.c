@@ -16,7 +16,7 @@ char *cap_string(char *str)
 	{
 		if (str[0] >= 97 && str[0] <= 122)
 		{
-			str[0] = str[0] - 32;
+			str[0] = str[0] - 'a' + 'A';
 		}
 
 		for (b = 0; x[b]; b++)
@@ -25,7 +25,7 @@ char *cap_string(char *str)
 			{
 				if (str[a] >= 'a' && str[a] <= 'z')
 				{
-					str[a] = str[a] - 32;
+					str[a] = str[a] - 'a' + 'A';
 				}
 			}
 		}
