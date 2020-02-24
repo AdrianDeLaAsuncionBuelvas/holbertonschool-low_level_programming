@@ -3,7 +3,6 @@
 C - More pointers, arrays and strings
 </h1>
 
-<h3>
 0-strcat.c
 1-strncat.c
 2-strncpy.c
@@ -15,5 +14,5 @@ C - More pointers, arrays and strings
 8-rot13.c
 holberton.h
 _putchar.c
-</h3>
+
 </strong>
