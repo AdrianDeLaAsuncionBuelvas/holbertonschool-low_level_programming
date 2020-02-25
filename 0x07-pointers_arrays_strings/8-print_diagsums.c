@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * print_diagsums - prints the sum of the matrix of two integers.
