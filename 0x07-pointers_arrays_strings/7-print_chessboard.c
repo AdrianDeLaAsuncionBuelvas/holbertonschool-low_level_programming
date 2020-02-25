@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 /**
  * print_chessboard- prints the chessboard
  * @a: Pointer char type Character
