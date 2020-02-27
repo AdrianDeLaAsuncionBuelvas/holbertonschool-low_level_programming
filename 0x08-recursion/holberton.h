@@ -13,5 +13,8 @@ int countNum(int n, int a);
 int _sqrt_recursion(int n);
 int is_prime_number(int n);
 int primeNum(int n, int a);
+int is_palindrome(char *s);
+int lengthPalindrome(char *str, int a, int b);
+int _strlen_recursion(char *s);
 
 #endif
