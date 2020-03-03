@@ -26,16 +26,13 @@ char *str_concat(char *s1, char *s2)
 
 	for (i = 0; s1[i]; i++)
 	{
-
 	}
 
-		for (j = 0; s2[j]; j++)
-		{
+	for (j = 0; s2[j]; j++)
+	{
+	}
 
-		}
-
-		str = malloc(sizeof(*str) * (i + j) + 1);
-
+	str = malloc(sizeof(*str) * (i + j) + 1);
 	if (str == NULL)
 	{
 		return (NULL);
@@ -52,8 +49,6 @@ char *str_concat(char *s1, char *s2)
 			str[x] = s2[a];
 			a = a + 1;
 		}
-
 	}
-
 	return (str);
 }
