@@ -2,28 +2,28 @@
 #include <stdlib.h>
 
 /**
- *
- *
- *
- *
+ * _strdup - returns a pointer to a newly allocated space in memory
+ * @str: Pointer type Character
+ * Return: *p
  */
 
 char *_strdup(char *str)
 {
 	int i;
-	char* p;
+	char *p;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; str[i]; i++){
+	for (i = 0; str[i]; i++)
+	{
 
 		p = malloc(sizeof(str) + i);
-		if(p == NULL)
+		if (p == NULL)
 		{
-			return(NULL);
+			return (NULL);
 		}
 	}
 	for (i = 0; str[i]; i++)
