@@ -14,13 +14,18 @@ char *argstostr(int ac, char **av)
 	int i, j, str, a;
 	char *p;
 
-	if (ac == 0 || av == NULL)
+	if (ac == 0)
 	{
 		return (NULL);
 	}
 
 	for (i = 0; i < ac; i++)
 	{
+		if (av[i] == NULL)
+		{
+			return (NULL);
+		}
+
 		for (j = 0; av[i][j]; j++)
 		{
 			str++;
