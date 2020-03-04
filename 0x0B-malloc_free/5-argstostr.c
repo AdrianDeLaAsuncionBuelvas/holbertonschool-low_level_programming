@@ -16,17 +16,13 @@ char *argstostr(int ac, char **av)
 	int a = 0;
 	char *p;
 
-	if (ac == 0)
+	if (ac == 0 || av == NULL)
 	{
 		return (NULL);
 	}
 
 	for (i = 0; i < ac; i++)
 	{
-		if (av[i] == NULL)
-		{
-			return (NULL);
-		}
 
 		for (j = 0; av[i][j]; j++)
 		{
