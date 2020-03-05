@@ -11,9 +11,8 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-
-	unsigned int i, j, x;
-	unsigned int a = 0;
+	unsigned int x, a = 0;
+	unsigned int leng1, leng2;
 	char *str;
 
 	if (s1 == NULL)
@@ -25,28 +24,22 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	}
 
-	for (i = 0; s1[i] != '\0'; i++)
-	{
-	}
+	leng1 = leng_string(s1);
+	leng2 = leng_string(s2);
 
-	for (j = 0; s2[j]; j++)
+	if (leng2 < n)
 	{
+		n = leng2;
 	}
-
-	if (j < n)
-	{
-		n = j;
-	}
-
-	str = malloc(sizeof(*str) * (i + n) + 1);
+	str = malloc(sizeof(*str) * (leng1 + n) + 1);
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	for (x = 0; x < (i + n); x++)
+	for (x = 0; x < (leng1 + n); x++)
 	{
-		if (x < i)
+		if (x < leng1)
 		{
 			str[x] = s1[x];
 		}
@@ -55,9 +48,23 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			str[x] = s2[a];
 			a = a + 1;
 		}
-
 	}
-
 	str[x] = 0;
 	return (str);
+}
+
+/**
+ * leng_string - get the length of a string
+ * @str: Pointer type Character
+ * Return: length
+ */
+
+int leng_string(char *str)
+{
+	unsigned int leng;
+
+	for (leng = 0; str[leng] != '\0'; leng++)
+	{
+	}
+	return (leng);
 }
