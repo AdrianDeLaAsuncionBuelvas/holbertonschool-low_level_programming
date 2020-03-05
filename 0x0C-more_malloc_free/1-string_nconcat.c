@@ -1,4 +1,22 @@
 #include "holberton.h"
+#include <stdio.h>
+
+/**
+ * leng_string - get the length of a string
+ * @str: Pointer type Character
+ * Return: length
+ */
+
+int leng_string(char *str)
+{
+	unsigned int leng;
+
+	for (leng = 0; str[leng] != '\0'; leng++)
+	{
+	}
+	return (leng);
+}
+
 
 /**
  * string_nconcat - concatenates two strings
@@ -10,7 +28,7 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int x, i, a;
+	unsigned int x, i;
 	unsigned int leng1, leng2;
 	char *str;
 
@@ -30,9 +48,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		n = leng2;
 	}
-
-	a = leng1 + n;
-	str = malloc(sizeof(char) * a + 1);
+	str = malloc(sizeof(*str) * ( leng1 + n) + 1);
 	if (str == NULL)
 	{
 		return (NULL);
@@ -42,27 +58,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		str[x] = s1[x];
 	}
-	for (i = 0; i < n; i++, x++)
+	for (i = 0; i < n; i++)
 	{
-		str[x] = s2[i];
+		str[x + i] = s2[i];
 	}
 
-	str[i] = 0;
+	str[x + i] = '\0';
 	return (str);
-}
-
-/**
- * leng_string - get the length of a string
- * @str: Pointer type Character
- * Return: length
- */
-
-int leng_string(char *str)
-{
-	unsigned int leng;
-
-	for (leng = 0; str[leng] != '\0'; leng++)
-	{
-	}
-	return (leng);
 }
