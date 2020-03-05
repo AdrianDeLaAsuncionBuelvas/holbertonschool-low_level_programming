@@ -28,7 +28,7 @@ int leng_string(char *str)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int x, i;
+	unsigned int x, a = 0;
 	unsigned int leng1, leng2;
 	char *str;
 
@@ -40,29 +40,31 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s2 = "";
 	}
-
 	leng1 = leng_string(s1);
 	leng2 = leng_string(s2);
 
-	if (n > leng2)
+	if (n < leng2)
 	{
 		n = leng2;
 	}
-	str = malloc(sizeof(*str) * ( leng1 + n) + 1);
+	str = malloc(sizeof(*str) * (leng1 + n) + 1);
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	for (x = 0; x < leng1; x++)
+	for (x = 0; x < (leng1 + n); x++)
 	{
-		str[x] = s1[x];
+		if (x < leng1)
+		{
+			str[x] = s1[x];
+		}
+		else
+		{
+			str[x] = s2[a];
+			a += 1;
+		}
 	}
-	for (i = 0; i < n; i++)
-	{
-		str[x + i] = s2[i];
-	}
-
-	str[x + i] = '\0';
+	str[x] = 0;
 	return (str);
 }
