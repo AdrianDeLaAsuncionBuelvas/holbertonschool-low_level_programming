@@ -7,64 +7,44 @@
  * Return: length
  */
 
-int leng_string(char *str)
-{
-	unsigned int leng;
-
-	for (leng = 0; str[leng] != '\0'; leng++)
-	{
-	}
-	return (leng);
-}
-
-
-/**
- * string_nconcat - concatenates two strings
- * @s1: Pointer type Character
- * @s2: Pointer type Character
- * @n: unsigned type Integer.
- * Return: str.
- */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int x, a = 0;
-	unsigned int leng1, leng2;
-	char *str;
+	char *p;
+	unsigned int strlen1, i, c;
 
 	if (s1 == NULL)
-	{
 		s1 = "";
-	}
-	if (s1 == NULL)
-	{
+	if (s2 == NULL)
 		s2 = "";
-	}
-	leng1 = leng_string(s1);
-	leng2 = leng_string(s2);
 
-	if (n > leng2)
-	{
-		n = leng2;
-	}
-	str = malloc(sizeof(*str) * (leng1 + n + 1));
-	if (str == NULL)
-	{
+	strlen1 = (unsigned int)_strlen(s1);
+	p = malloc((strlen1 + n + 1) * sizeof(char));
+	if (p == NULL)
 		return (NULL);
-	}
-
-	for (x = 0; x < (leng1 + n); x++)
+	for (i = 0, c = 0; i < (strlen1 + n); i++)
 	{
-		if (x < leng1)
-		{
-			str[x] = s1[x];
-		}
+		if (i < strlen1)
+			p[i] = s1[i];
 		else
-		{
-			str[x] = s2[a];
-			a += 1;
-		}
+			p[i] = s2[c++];
 	}
-	str[x] = 0;
-	return (str);
+	p[i] = '\0';
+
+	return (p);
+}
+
+/**
+ * _strlen - find length of string
+ * @s: string
+ * Return: length of string
+ */
+
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		;
+	return (i);
 }
