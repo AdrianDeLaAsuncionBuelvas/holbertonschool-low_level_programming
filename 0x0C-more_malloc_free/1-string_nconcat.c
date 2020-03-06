@@ -2,9 +2,11 @@
 #include <stdio.h>
 
 /**
- * leng_string - get the length of a string
- * @str: Pointer type Character
- * Return: length
+ * string_nconcat - concatenate two strings
+ * @s1: var dest
+ * @s2: var src
+ * @n: number of src characters
+ * Return: Pointer p
  */
 
 
