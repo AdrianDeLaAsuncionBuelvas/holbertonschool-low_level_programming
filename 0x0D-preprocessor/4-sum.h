@@ -1,3 +1,4 @@
-#ifndef ABS
-#define ABS(X) ((x > 0) ? x : x * -1)
+#ifndef SUM_H
+#define SUM_H
+#define SUM(x, y) x + y
 #endif
