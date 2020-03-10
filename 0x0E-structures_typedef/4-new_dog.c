@@ -36,8 +36,10 @@ char *_strdup(char *str)
 
 	copy = malloc(sizeof(char) * len + 1);
 
-	if (!copy)
+	if (!copy){
+		free(str);
 		return (NULL);
+	}
 
 	for (i = 0; i < len; i++)
 		copy[i] = str[i];
@@ -65,27 +67,35 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	n = malloc(_strlen(name) + 1);
-	if (!n)
+	if (name != NULL)
 	{
-		free(str);
-		return (NULL);
-	}
-
-	n = _strdup(name);
-	str->name = n;
-
-	m = malloc(_strlen(owner) + 1);
-	if (!m)
+	n = malloc(_strlen(name) + 1);
+	if (n == NULL)
 	{
 		free(str->name);
 		free(str);
 		return (NULL);
 	}
-	m = _strdup(owner);
+	}
 
-	str->owner = m;
+	n = _strdup(name);
+	str->name = n;
+
 	str->age = age;
+	if (owner != NULL)
+	{
+	m = malloc(_strlen(owner) + 1);
+	if (m == NULL)
+	{
+		free(str->name);
+		free(str->owner);
+		free(str);
+		return (NULL);
+	}
+	}
+	m = _strdup(owner);
+	str->owner = m;
+
 
 	return (str);
 
