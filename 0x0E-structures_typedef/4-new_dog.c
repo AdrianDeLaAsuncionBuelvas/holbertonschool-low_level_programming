@@ -38,7 +38,6 @@ char *_strdup(char *str)
 
 	if (!copy)
 	{
-		free(str);
 		return (NULL);
 	}
 
@@ -71,14 +70,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	n = malloc(_strlen(name) + 1);
 	if (n == NULL)
 	{
+		free(str);
 		return (NULL);
 	}
 
-	free(str);
+	free(n);
 	n = _strdup(name);
 	str->name = n;
 
-	str->age = age;
 	m = malloc(_strlen(owner) + 1);
 	if (m == NULL)
 	{
@@ -89,6 +88,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	m = _strdup(owner);
 	str->owner = m;
+	str->age = age;
 
 
 	return (str);
