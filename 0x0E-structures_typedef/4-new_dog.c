@@ -68,15 +68,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	n = malloc(_strlen(name) + 1);
-	if (!n)
+	if (n == NULL)
 	{
-		free(str->name);
 		free(str);
-		return (NULL);
-	}
-	if (str->name == NULL)
-	{
-	free(n);
+		return NULL;
 	}
 
 	n = _strdup(name);
