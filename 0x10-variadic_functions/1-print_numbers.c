@@ -1,10 +1,10 @@
 #include "variadic_functions.h"
 
 /**
- *
- *
- *
- *
+ * print_numbers -  prints numbers, followed by a new line
+ * @separator: const Pointer type Character
+ * @n: type unsigned
+ * Return: void
  */
 
 void print_numbers(const char *separator, const unsigned int n, ...)
@@ -16,16 +16,15 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	if (print != '\0')
 	{
-		for (i = 0; i < n -1; i++)
+		for (i = 0; i < n - 1; i++)
 		{
 			if (separator == NULL)
 				printf("%d", va_arg(print, int));
-		else
-		     printf ("%d%s", va_arg(print, unsigned int), separator);
+			else
+				printf("%d%s", va_arg(print, unsigned int), separator);
 		}
 		printf("%d", va_arg(print, int));
 	}
-	va_end(print);
 	putchar('\n');
-
+	va_end(print);
 }
