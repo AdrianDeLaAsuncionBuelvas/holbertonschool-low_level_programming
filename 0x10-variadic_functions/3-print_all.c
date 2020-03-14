@@ -23,11 +23,13 @@ void _print_str(va_list str)
 	char *s;
 
 	s = va_arg(str, char *);
-	if (s == NULL || !(*s))
-		s = "(nil)";
-
+	if (!s || !(*s))
+	{
+		printf("%s", "(nil)");
+	return;
+	}
 	printf("%s", s);
-}
+	}
 
 /**
  *
@@ -39,7 +41,7 @@ void _print_str(va_list str)
 
 void print_all(const char * const format, ...)
 {
-	unsigned int i = 0, j;
+	unsigned int i, j;
 	va_list str;
 	char *s = "";
 
@@ -50,6 +52,7 @@ void print_all(const char * const format, ...)
 		{"s", _print_str}
 	};
 
+	i = 0;
 	va_start(str, format);
 
 	while (format[i] != '\0' && format != NULL)
