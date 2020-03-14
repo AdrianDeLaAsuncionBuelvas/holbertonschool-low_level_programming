@@ -3,7 +3,9 @@
 
 void _print_char(va_list str)
 {
-	printf("%c", va_arg(str, int));
+	char bombon;
+	bombon = va_arg(str, int);
+	printf("%c", bombon);
 }
 
 void _print_int(va_list str)
@@ -20,7 +22,7 @@ void _print_str(va_list str)
 {
 	char *s;
 
-	s = va_arg(str, char*);
+	s = va_arg(str, char *);
 	if (s == NULL)
 		s = "(nil)";
 
