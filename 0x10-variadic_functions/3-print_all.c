@@ -1,10 +1,17 @@
 #include "variadic_functions.h"
 
+/**
+ *
+ *
+ *
+ *
+ */
 
 void _print_char(va_list str)
 {
 	char bombon;
 	bombon = va_arg(str, int);
+
 	printf("%c", bombon);
 }
 
@@ -55,7 +62,7 @@ void print_all(const char * const format, ...)
 	i = 0;
 	va_start(str, format);
 
-	while (format[i] != '\0' && format != NULL)
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
 		while (j < 4)
