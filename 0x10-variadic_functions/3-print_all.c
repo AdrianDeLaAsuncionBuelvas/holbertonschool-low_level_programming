@@ -23,7 +23,7 @@ void _print_str(va_list str)
 	char *s;
 
 	s = va_arg(str, char *);
-	if (s == NULL)
+	if (s == NULL || !(*s))
 		s = "(nil)";
 
 	printf("%s", s);
