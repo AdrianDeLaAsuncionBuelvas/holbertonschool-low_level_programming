@@ -56,7 +56,7 @@ void _print_str(va_list str)
  * Return: void
  */
 
-+8void print_all(const char * const format, ...)
+void print_all(const char * const format, ...)
 {
 	unsigned int i, j;
 	va_list str;
