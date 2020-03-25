@@ -9,13 +9,12 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *temp;
 	int count = 0;
+	const listint_t *temp;
 
 	temp = head;
 	if (head == NULL)
 	{
-		exit(98);
 		return (0);
 	}
 
