@@ -16,9 +16,9 @@ size_t print_listint_safe(const listint_t *head)
 	unsigned int count = 0;
 
 
-	node = head;
-	if (head != NULL)
+	if (head)
 	{
+		node = head;
 		while (node != NULL)
 		{
 			temp = node;
