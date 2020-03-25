@@ -13,11 +13,13 @@ size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *node;
 	const listint_t *temp;
-	size_t count = 0;
+	size_t count;
 
 
 	if (head == NULL)
 		exit(98);
+
+	count = 0;
 	node = head;
 	while (node != NULL)
 	{
