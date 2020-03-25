@@ -13,7 +13,7 @@ size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *node;
 	const listint_t *temp;
-	unsigned int count = 0;
+	size_t count = 0;
 
 
 	if (head == NULL)
