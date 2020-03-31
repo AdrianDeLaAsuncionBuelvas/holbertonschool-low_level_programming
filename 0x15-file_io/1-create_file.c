@@ -13,6 +13,8 @@ int create_file(const char *filename, char *text_content)
 	int size = 0;
 	int fd, fwrite;
 
+	if (filename == NULL)
+		return (-1);
 
 	fd = open(filename, O_RDWR | O_CREAT | O_RDONLY, 0600);
 	if (fd == -1)
@@ -27,7 +29,6 @@ int create_file(const char *filename, char *text_content)
 	if (fwrite == -1)
 		return(-1);
 
-	return(1);
 	}
 
 	close(fd);
