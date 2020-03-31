@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * create_file - creates a file
+ * create_file - funtion that creates a file
  * @filename: variable that contains the filename
  * @text_content: variable that contains the content of text
  * Return: 1 on success, -1
