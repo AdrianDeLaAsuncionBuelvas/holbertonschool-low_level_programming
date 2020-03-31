@@ -10,17 +10,15 @@
 int create_file(const char *filename, char *text_content)
 {
 
-	ssize_t size = 0;
+	int size = 0;
 	int fd, fwrite;
 
-	if (filename == NULL)
-		return (-1);
 
 	fd = open(filename, O_RDWR | O_CREAT | O_RDONLY, 0600);
 	if (fd == -1)
 		return (-1);
 
-	if (text_content != NULL)
+	if (text_content)
 	{
 		while (text_content[size])
 			size++;
@@ -33,6 +31,6 @@ int create_file(const char *filename, char *text_content)
 	}
 
 	close(fd);
-	return (-1);
+	return (1);
 
 }
