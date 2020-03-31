@@ -26,7 +26,8 @@ int append_text_to_file(const char *filename, char *text_content);
 ### Example
 An example reads a text file and prints it to the POSIX standard output.:
 
- `int main(int ac, char **av)
+`
+int main(int ac, char **av)
 {
     ssize_t n;
 
@@ -40,7 +41,8 @@ An example reads a text file and prints it to the POSIX standard output.:
     n = read_textfile(av[1], 1024);
     printf("\n(printed chars: %li)\n", n);
     return (0);
-}`
+}
+`
 
 #### Author
 [Adrian De La Asuncion Buelvas](https://github.com/AdrianDeLaAsuncionBuelvas)
