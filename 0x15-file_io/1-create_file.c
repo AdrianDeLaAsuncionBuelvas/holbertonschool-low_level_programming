@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- *
- *
- *
- *
+ * create_file - creates a file
+ * @filename: variable that contains the filename
+ * @text_content: variable that contains the content of text
+ * Return: 1 on success, -1
  */
 
 int create_file(const char *filename, char *text_content)
@@ -27,7 +27,7 @@ int create_file(const char *filename, char *text_content)
 
 	fwrite = write(fd, text_content, size);
 	if (fwrite == -1)
-		return(-1);
+		return (-1);
 
 	}
 
