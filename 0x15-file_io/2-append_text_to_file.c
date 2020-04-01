@@ -1,22 +1,21 @@
 #include "holberton.h"
 
 /**
- * create_file - funtion that creates a file
+ * append_text_to_file - appends text at the end of a file.
  * @filename: variable that contains the filename
  * @text_content: variable that contains the content of text
  * Return: 1 on success, -1
  */
 
-int create_file(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
-
 	ssize_t size = 0;
 	int fd, fw;
 
 	if (filename == NULL)
 		return (-1);
 
-	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	fd = open(filename, O_WRONLY | O_APPEND);
 	if (fd == -1)
 		return (-1);
 
