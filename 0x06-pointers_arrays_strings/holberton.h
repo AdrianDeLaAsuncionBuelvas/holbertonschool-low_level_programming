@@ -2,6 +2,8 @@
 #define HOLBERTON_H
 
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int _putchar(char c);
 char *_strcat(char *dest, char *src);
@@ -13,5 +15,6 @@ char *string_toupper(char *a);
 char *cap_string(char *str);
 char *leet(char *str);
 char *rot13(char *str);
+void print_number(int n);
 
 #endif
