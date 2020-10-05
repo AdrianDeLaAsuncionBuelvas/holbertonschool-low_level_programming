@@ -9,14 +9,17 @@
 char *cap_string(char *s)
 {
 	int j, a;
-	char token[] = ",;!?(){}\n\t\" ";
-        for (a = 0; s[a] != '\0'; a++)
+	char token[] = {32, 9, 10, ',', ';', '.', '!', '?', '"',
+		    '(', ')', '{', '}'};
+
+	for (a = 0; s[a] != '\0'; a++)
 	{
 		if (s[0] >= 97 && s[0] <= 122)
 		{
 			s[0] = s[0] - 'a' + 'A';
 		}
-		for (j = 0; token[j]; j++) {
+		for (j = 0; token[j]; j++)
+		{
 			if (s[a - 1] == token[j])
 			{
 				if (s[a] >= 'a' && s[a] <= 'z')
