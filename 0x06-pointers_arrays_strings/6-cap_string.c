@@ -8,21 +8,23 @@
 
 char *cap_string(char *s)
 {
-	int i = 0;
-	char *a = s;
+	int j, a;
 	char token[] = ",;!?(){}\n\t\" ";
-	while (*s != '\0')
+        for (a = 0; s[a] != '\0'; a++)
 	{
-		if (*s >= 97 && *s <= 122)
+		if (s[0] >= 97 && s[0] <= 122)
 		{
-			for (i = 0; token[i]; i++) {
-			if (*(s - 1) == token[i])
+			s[0] = s[0] - 32;
+		}
+		for (j = 0; token[j]; j++) {
+			if (s[a - 1] == token[j])
 			{
-				*s = *s - 32;
-			}
+				if (s[a] >= 'a' && s[a] <= 'z')
+				{
+					s[a] = s[a] - 32;
+				}
 			}
 		}
-		s++;
 	}
-	return (a);
+	return (s);
 }
